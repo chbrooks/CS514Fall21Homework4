@@ -34,7 +34,9 @@ Scanner, read in the first three lines of the file (title, label and source) and
 
 Task 4: Next, implement getNextBars. It should take as input an already-created Scanner and return an array of Bars
 representing the next group of data. It will need to read in the first number to see how many lines follow, then read in 
-each line, parse it, create a Bar and add it to the array. 
+each line, parse it, create a Bar and add it to the array.
+
+(note: some files, such as infinity-war.txt, have initial values of 0, which will make BarChart crash. To solve this, set the value to max(value, 1)).
 
 Task 5: Now you're ready to implement drawChart. It will need to:
 
@@ -47,6 +49,8 @@ Task 5: Now you're ready to implement drawChart. It will need to:
   - use Arrays.sort() to sort the Bars in order.
   - use the nbars variable to determine how many bars to add.
   - add the top n Bars to the chart in descending order.
+    
+  (note: sort() sorts the array in *ascending* order. How do you get the n largest elements? Don't reverse the whole thing!!)
   - call StdDraw.clear();
   - call this.chart.draw(); to render the chart. 
   - call StdDraw.show(); to make the window display. 
